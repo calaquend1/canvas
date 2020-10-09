@@ -1,0 +1,43 @@
+<head>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+    <script>
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      ctx.fillRect(50, 50, 100, 100);
+    </script>
+  <canvas id="canvasCircle"></canvas>
+  <script>
+      const canvasCircle = document.getElementById('canvasCircle');
+      const ctxC = canvasCircle.getContext('2d');
+      ctxC.beginPath();
+      ctxC.arc(100, 100, 50, 0, 2 * Math.PI);
+      ctxC.stroke();
+  </script>
+  <canvas id="canvasTriangle"></canvas>
+  <script>
+      const canvasTriangle = document.getElementById('canvasTriangle');
+      const ctxT = canvasTriangle.getContext('2d');
+      ctxT.beginPath();
+      ctxT.moveTo(200, 75);
+      ctxT.lineTo(100, 75);
+      ctxT.lineTo(100, 25);
+      ctxT.fill();
+  </script>
+  <canvas id="canvasHeart"></canvas>
+  <script>
+      const canvasHeart = document.getElementById('canvasHeart');
+      const ctxH = canvasHeart.getContext('2d');
+      ctxH.beginPath();
+      ctxH.moveTo(75, 40);
+      ctxH.bezierCurveTo(75, 37, 70, 25, 50, 25);
+      ctxH.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
+      ctxH.bezierCurveTo(20, 80, 40, 102, 75, 120);
+      ctxH.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
+      ctxH.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
+      ctxH.bezierCurveTo(85, 25, 75, 37, 75, 40);
+      ctxH.stroke();
+  </script>
+</body>
