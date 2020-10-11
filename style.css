@@ -1,7 +1,13 @@
-canvas {
-  border: 1px solid #000
-}
-
 #canvasTriangle {
   border: 1px solid black;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+canvas, canvasSquare {
+  border: 1px solid #000;
 }
