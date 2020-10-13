@@ -66,3 +66,43 @@ ctxS.fillRect(25,25,100,100);
 
 ctxS.fillStyle = 'rgba(231, 29, 54, 0.5)';
 ctxS.fillRect(75,75,100,100);
+
+// pokemon
+const img = document.getElementById("eeveelutions");
+const canvaspokemon = document.getElementById("canvaspokemon");
+const ctxP = canvaspokemon.getContext("2d");
+
+img.onload = function () {
+  img.crossOrigin = "anonymous";
+  ctxP.drawImage(img, 0, 0);
+  const imgData = ctxP.getImageData(0, 0, canvaspokemon.width, canvaspokemon.height);
+  for (i = 0; i < imgData.data.length; i += 4) {
+    imgData.data[i] = 255 - imgData.data[i];
+    imgData.data[i + 1] = 255 - imgData.data[i + 1];
+    imgData.data[i + 2] = 255 - imgData.data[i + 2];
+    imgData.data[i + 3] = 255;
+}
+ctxP.putImageData(imgData, 0, 0);
+};
+
+// pokemon 2
+const imgP2 = document.getElementById("P2");
+const canvasP2 = document.getElementById("canvasP2");
+const ctxP2 = canvasP2.getContext("2d");
+
+imgP2.onload = function () {
+  imgP2.crossOrigin = "anonymous";
+  ctxP2.drawImage(imgP2, 0, 0);
+  const imgData = ctxP2.getImageData(0, 0, canvasP2.width, canvasP2.height);
+  for (i = 0; i < imgData.data.length; i += 4) {
+    let count = imgData.data[i] + imgData.data[i + 1] + imgData.data[i + 2];
+    let colour = 0;
+    if (count > 383) colour = 255;
+
+    imgData.data[i] = colour;
+    imgData.data[i + 1] = colour;
+    imgData.data[i + 2] = colour;
+    imgData.data[i + 3] = 255;
+  }
+  ctxP2.putImageData(imgData, 0, 0);
+};
